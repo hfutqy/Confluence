@@ -104,7 +104,7 @@ public static void main(String[] args) {
     System.out.printf("两位数字的日（不足两位前面补0）：%td%n",date);  
     //e的使用，日（一位不补零）  
     System.out.printf("月份的日（前面不补0）：%te",date);  
-}  
+}   
 //      英文月份简称：Sep  
 //		本地月份简称：九月  
 //		英文月份全称：September  
