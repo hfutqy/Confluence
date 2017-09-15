@@ -31,7 +31,7 @@ UUID Version 4：随机UUID
 UUID Version 5：基于名字的UUID（SHA1）
 和版本3的UUID算法类似，只是散列值计算使用SHA1（Secure Hash Algorithm 1）算法。
 
-UUID的应用
+## UUID的应用 ##
 
 从UUID的不同版本可以看出，
 Version 1/2适合应用于分布式计算环境下，具有高度的唯一性；
