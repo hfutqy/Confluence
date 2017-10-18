@@ -1,5 +1,6 @@
 # UUID具有以下涵义： #
 
+UUID含义是通用唯一识别码 (Universally Unique Identifier)
 经由一定的算法机器生成
 为了保证UUID的唯一性，规范定义了包括网卡MAC地址、时间戳、名字空间（Namespace）、随机或伪随机数、时序等元素，以及从这些元素生成UUID的算法。UUID的复杂特性在保证了其唯一性的同时，意味着只能由计算机生成。
 
