@@ -18,10 +18,14 @@
 
 ## 二、LAST_INSERT_ID()的使用
 1.LAST_INSERT_ID()是与当前数据库访问链接关联的，可以通过这个方式LASt_INSERT_ID(x)指定LASt_INSERT_ID()的值为x，相当于存在该链接的缓存中，这时候取LASt_INSERT_ID()的值就是x。
-2.`<selectKey>`的使用,如下所示,自测只能用于`<insert>`模块，order是指在该insert模块语句执行结束再执行selectKey模块。**keyProperty**就很好用了
+2.`<selectKey>`的使用,如下所示,自测只能用于`<insert>`模块，order是指在该insert模块语句执行结束再执行selectKey模块。**keyProperty**就很好用了，他可以将SELECT LAST_INSERT_ID()就是selectKey模块的返回值，回写到指定的入参的属性中。入参最好用JavaBean，然后指定keyProperty的值为入参bean中的一个属性，这样该接口使用后，接口入参Bean的属性就会被重写。
 
 ```
-<selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+<insert id="insert" parameterType="com.my.testBean">
+<selectKey resultType="java.lang.Integer" keyProperty="code" order="AFTER" >
       SELECT LAST_INSERT_ID()
 </selectKey>
+  update table set num= LAST_INSERT_ID(num+1)
+ </insert>
 ```
+上述testBean里面有个code属性，那么这个接口调用后入参的testBean.getCode() = LAST_INSERT_ID(num+1)
