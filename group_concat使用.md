@@ -19,3 +19,5 @@ select A.id,group_concat(B.tag) from tmc_task_incomplete A  left join tmc_order_
 | 13 | NULL                |
 +----+---------------------+
 ```
+需要注意的是，要配合group by A.id使用才可以<br>
+而且，group_contract(B.tag)字段是一个string，需要再代码中使用split(",")切割处理
