@@ -18,8 +18,8 @@ while(iterator.hasNext()){
 ### 2018/6/7
 #### ConcurrentHashmap、Hashtable不支持key或者value为null
 在很多java资料中，都有提到 ConcurrentHashmap HashMap和Hashtable都是key-value存储结构，但他们有一个不同点是 ConcurrentHashmap、Hashtable不支持key或者value为null，而HashMap是支持的。为什么会有这个区别？在设计上的目的是什么？
-```
+
 在网上找到了这样的解答:The main reason that nulls aren’t allowed in ConcurrentMaps (ConcurrentHashMaps, ConcurrentSkipListMaps) is that ambiguities that may be just barely tolerable in non-concurrent maps can’t be accommodated. The main one is that if map.get(key) returns null, you can’t detect whether the key explicitly maps to null vs the key isn’t mapped. In a non-concurrent map, you can check this via map.contains(key), but in a concurrent one, the map might have changed between calls.
 
 理解如下：ConcurrentHashmap和Hashtable都是支持并发的，这样会有一个问题，当你通过get(k)获取对应的value时，如果获取到的是null时，你无法判断，它是put（k,v）的时候value为null，还是这个key从来没有做过映射。HashMap是非并发的，可以通过contains(key)来做这个判断。而支持并发的Map在调用m.contains（key）和m.get(key),m可能已经不同了。
-```
+
