@@ -1,6 +1,6 @@
 ### 直接上代码举例：
 
-#### 这是不走feature，但是要等待前置条件执行完，所以基本就是串行
+#### 这是不走FutureTask，但是要等待前置条件执行完，所以基本就是串行
 ```
 public class TestJ {
     public static void main(String[] args) throws InterruptedException{
@@ -97,4 +97,4 @@ public class TestJ{
 }
 ```
 
-还是feature好用，异步处理任务，让任务自己跑，并且结果是可以感知的。
+还是FutureTask好用，异步处理任务，让任务自己跑，并且结果是可以感知的。
