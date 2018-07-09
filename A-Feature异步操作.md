@@ -1,6 +1,6 @@
 ### 直接上代码举例：
 
-#### 这是不走feature，但是要等待前置条件执行完，所有基本就是串行
+#### 这是不走feature，但是要等待前置条件执行完，所以基本就是串行
 ```
 public class TestJ {
     public static void main(String[] args) throws InterruptedException{
@@ -49,7 +49,7 @@ public class TestJ {
 }
 ```
 
-#### 这把前置条件放feature对象task里跑，同时还能做别的事，最后task.get()获取task的执行结果
+#### 这让前置条件feature对象task自己跑，不影响继续往下走，即同时还能做别的事，最后通过task.get()获取task的执行结果
 ```
 public class TestJ{
 
