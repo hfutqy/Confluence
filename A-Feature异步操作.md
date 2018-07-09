@@ -8,7 +8,7 @@ public class TestJ {
         //第一步--网购厨具
         OnlineShopping chujuThread = new OnlineShopping();
         chujuThread.start();
-        chujuThread.join();//串行保证chujuThread先执行完毕，等待无限长知道thread执行结束
+        chujuThread.join();//串行保证chujuThread先执行完毕，join()=join(0)即等待无限长直到chujuThread执行结束
         //第二步--去超市购买食材
         Thread.sleep(2000);
         Shicai shicai = new Shicai();
@@ -96,3 +96,5 @@ public class TestJ{
 
 }
 ```
+
+还是feature好用，异步处理任务，让任务自己跑，并且结果是可以感知的。
