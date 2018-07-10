@@ -2,6 +2,7 @@
 
 ```
 //以下可以使用php -r '***'直接运行
+//参考文档https://www.cnblogs.com/52fhy/p/8901815.html
 <?php
 
 $start_time = microtime(TRUE);
