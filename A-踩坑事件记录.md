@@ -42,3 +42,4 @@ static PHP_METHOD(swoole_process, __construct)
     }
 ......
 ```
+换新的思路，使用curl_multi 来实现并发的http请求（考虑到时间损耗在于http请求响应上，这样并发使用http请求有效解决耗时）
