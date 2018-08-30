@@ -32,7 +32,7 @@
 
 ### 三、mapper.xml文件开启下划线自动转驼峰映射resultType
 参考：https://blog.csdn.net/huisiwarmhome/article/details/80019100
-```
+```xml
 mybatis-config.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -44,4 +44,14 @@ mybatis-config.xml
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
 </configuration>
+```
+```xml
+<!--  配置 -->
+ <bean id="lotterySqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:spring/mybatis-config.xml"/>
+        <property name="mapperLocations" value>classpath:mapping/*.xml </property>
+        <!--camelCase  转换驼峰-->
+        <property name="objectWrapperFactory" ref="mapWrapperFactory" />
+    </bean>
 ```
