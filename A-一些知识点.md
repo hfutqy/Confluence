@@ -13,7 +13,7 @@ public interface MatchingBean<T> {
 ```
 FactoryList 可以理解为所有(接口)E的实现类
 可以使用@Resource获取spring注入的所有E的实现类 FactoryList
-(枚举)K可以理解为E的固有标记，可以通过k来确定E用了哪个实现类
+(枚举/标记值)K可以理解为E的固有标记，可以通过k来确定E用了哪个实现类
 
 ### 类的实例化顺序
 按照考虑的顺序如下：
