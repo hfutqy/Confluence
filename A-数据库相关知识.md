@@ -1,3 +1,13 @@
+### 删除表数据
+
+- 正确的用法：
+- 当你不再需要该表时， 用 drop；当你仍要保留该表，但要删除所有记录时， 用 truncate；当你要删除部分记录时（always with a WHERE clause), 用 delete其中使用truncate，例如：truncate table user;
+##### truncate使用注意事项
+TRUNCATE TABLE 在功能上与不带 WHERE 子句的 DELETE 语句相同：二者均删除表中的全部行。但 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少。<br>
+如果有ROLLBACK语句，DELETE操作将被撤销，但TRUNCATE不会撤销。<br>
+效率上：drop > truncate > delete
+
+
 ### MySql分解关联查询优点
 1. 可以复用应用缓存、mysql查询缓存
   应用缓存：程序实现的缓存，粒度细了便于复用，减少sql插叙数
