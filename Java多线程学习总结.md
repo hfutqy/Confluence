@@ -25,11 +25,11 @@ public class ThreadTest {
 
 class MyThread extends Thread {
 	private String flag;
-	
+
 	public MyThread(String flag) {
 		this.flag = flag;
 	}
-	
+
 	@Override
 	public void run() {
 		super.run();
@@ -53,7 +53,7 @@ t2的线程在运行中
 t2的线程在运行中
 t2的线程在运行中
 ```
-注意：**start()**方法的调用后并不是立即执行多线程代码，而是使得该线程变为可运行态（Runnable），什么时候运行是由操作系统决定的。Thread.sleep()方法调用目的是不让当前线程独自霸占该进程所获取的CPU资源，以留出一定时间给其他线程执行的机会。
+注意：**start()** 方法的调用后并不是立即执行多线程代码，而是使得该线程变为可运行态（Runnable），什么时候运行是由操作系统决定的。Thread.sleep()方法调用目的是不让当前线程独自霸占该进程所获取的CPU资源，以留出一定时间给其他线程执行的机会。
 还要注意的一点，当t1线程未结束又运行t1（t1.start()）那么程序会报异常：java.lang.IllegalThreadStateException，提示t1还未运行结束，这个注意控制。
 
 #### 二、实现java.lang.Runnable接口
@@ -71,11 +71,11 @@ public class ThreadTest {
 class MyThread implements Runnable{
 
 	private String flag;
-	
+
 	public MyThread(String flag) {
 		this.flag = flag;
 	}
-	
+
 	@Override
 	public void run() {
 		for(int i=0; i<5; i++) {
@@ -100,7 +100,7 @@ class MyThread implements Runnable{
 1. 新建(new)：新创建了一个线程对象。
 2. 可运行(runnable)：线程对象创建后，其他线程(比如main线程）调用了该对象的start()方法。该状态的线程位于可运行线程池中，等待被线程调度选中，获取cpu 的使用权 。
 3. 运行(running)：可运行状态(runnable)的线程获得了cpu 时间片（timeslice） ，执行程序代码。
-4. 阻塞(blocked)：阻塞状态是指线程因为某种原因放弃了cpu 使用权，也即让出了cpu timeslice，暂时停止运行。直到线程进入可运行(runnable)状态，才有机会再次获得cpu timeslice 转到运行(running)状态。阻塞的情况分三种： 
+4. 阻塞(blocked)：阻塞状态是指线程因为某种原因放弃了cpu 使用权，也即让出了cpu timeslice，暂时停止运行。直到线程进入可运行(runnable)状态，才有机会再次获得cpu timeslice 转到运行(running)状态。阻塞的情况分三种：
 (一). 等待阻塞：运行(running)的线程执行o.wait()方法，JVM会把该线程放入等待队列(waitting queue)中。
 (二). 同步阻塞：运行(running)的线程在获取对象的同步锁时，若该同步锁被别的线程占用，则JVM会把该线程放入锁池(lock pool)中。
 (三). 其他阻塞：运行(running)的线程执行Thread.sleep(long ms)或t.join()方法，或者发出了I/O请求时，JVM会把该线程置为阻塞状态。当sleep()状态超时、join()等待线程终止或者超时、或者I/O处理完毕时，线程重新转入可运行(runnable)状态。（注意,sleep是不会释放持有的锁）
@@ -118,4 +118,3 @@ class MyThread implements Runnable{
 编写简单，如果需要访问当前线程，则无需使用Thread.currentThread()方法，直接使用this即可获得当前线程。
 劣势是：
 线程类已经继承了Thread类，所以不能再继承其他父类。
-
