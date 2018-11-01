@@ -59,15 +59,23 @@ Iterator
 
 
 F: JVM内存模型
-
+堆的分区--年轻代、老年代
+年轻的 8:1:1   monitor.gc    
+老年代--      full.gc   超大对象会直接进入老年代
 
 
 
 
 G: 类加载
 JDK 默认提供了如下几种ClassLoader
-BootStrp ClassLoader 是C++写的;它是在Java虚拟机启动后初始化的
+1. BootStrp ClassLoader 是C++写的;它是在Java虚拟机启动后初始化的
 负责加载%JAVA_HOME%/jre/lib,-Xbootclasspath参数指定的路径以及%JAVA_HOME%/jre/classes中的类
+2. ExtClassLoader
+Bootstrp loader加载ExtClassLoader,并且将ExtClassLoader的父加载器设置为Bootstrp loader
+加载%JAVA_HOME%/jre/lib/ext，此路径下的所有classes目录以及java.ext.dirs系统变量指定的路径中类库。
+3. AppClassLoader
+Bootstrp loader加载完ExtClassLoader后，就会加载AppClassLoader,并且将AppClassLoader的父加载器指定为 ExtClassLoader。
+
 
 
 
