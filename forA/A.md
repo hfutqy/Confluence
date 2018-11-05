@@ -120,3 +120,20 @@ Spring AOP 切面；如何@aspect 切点aspect point、after、before
 生产者：spring支持的JmsTemplate；设置优先级0-9、推送方式、消息存活时间、
 消费者：实现MessageListener接口，有onMessage方法
 配置：JmsTemplate
+
+
+2018/10/31 youzan
+印象深刻的项目经验，设计的不错的点
+
+jvm   new对象进入老年代 超大的对象会直接进入老年代
+分为eden survive
+
+组合索引
+explain 组合索引是什么样
+aop
+事务    事务级别
+多线程、线程池  属性，队列作用，拒绝策略
+hashmap..concunrrentHashmap  hashmap扩容过程
+
+redis 持久化过程
+堆 垃圾回收

@@ -25,9 +25,11 @@ class Node<K, V>{
 ```java
  Node<K, V>[];
 ```
-
+哈不是
 3. 数组就要设置大小；大小有初始化大小和最大值。
 数组大小要是2的n次幂，这样减去1，其他所有位都是1
+数组的散列性大了，碰撞概率就低了
+
 ```java
 //DefaultSize = ...;为什么走位运算，因为快；要求2的n次幂，因为n-1后按位都是1
 static final int DEFAULT_INITIAL_CAPACITY = 1 << 4; // aka 16
