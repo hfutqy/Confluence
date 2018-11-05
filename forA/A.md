@@ -110,6 +110,8 @@ Bootstrp loader加载完ExtClassLoader后，就会加载AppClassLoader,并且将
 索引：单一索引(唯一索引、主键索引)、组合索引(最左原则，where里面有组合索引从左到右的索引)、
 【Spring】
 Spring IOC 注入，怎么注入的？注入方式-a.XML里面写、b.@value c.@Service 和@Resource
+implements InitializingBean
+在XML里面定义\<bean id=.. class=.. init-method="init">
 Spring AOP 切面；如何@aspect 切点aspect point、after、before
 原理：动态代理--反射 （jdk动态代理、cglib 一个是基于接口的一个是基于类的☆）
 【Redis】
