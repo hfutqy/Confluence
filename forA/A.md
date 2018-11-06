@@ -77,13 +77,6 @@ Bootstrp loader加载ExtClassLoader,并且将ExtClassLoader的父加载器设置
 Bootstrp loader加载完ExtClassLoader后，就会加载AppClassLoader,并且将AppClassLoader的父加载器指定为 ExtClassLoader。
 
 
-
-
-
-
-
-
-
 面试经历：
 【线程池】
 参数：1.最大线程数m 2.核心线程数n n是永久激活的；
@@ -151,9 +144,11 @@ redis 持久化过程
 5.volatile和synchronized
 6.集群--多实例可以访问一个应用吗
 7.乐观锁、悲观锁
-8.mysql存储引擎myisame和innodb区别，索引的数据结构、为什么用b+树
-myisame是不完全回滚 默认锁表  不支持外键 低并发、查询快
+8.mysql存储引擎myisam和innodb区别，索引的数据结构、为什么用b+树
+myisam是不完全回滚 默认锁表  不支持外键 低并发、查询快
 innodb 是完全回滚   默认锁行  支持外键   高并发推荐innodb，效率高
 9.abstract类和接口的区别
+抽象类是用来捕捉子类的通用特性的 。它不能被实例化，只能被用作子类的超类。抽象类是被用来创建继承层级里子类的模板。以JDK中的GenericServlet为例：[public abstract class GenericServlet implements Servlet]
+
 10.redis支持的数据类型、持久化的方式
 11.谈谈我没问到但是你有的优点
