@@ -121,12 +121,16 @@ Spring AOP 切面；如何@aspect 切点aspect point、after、before
 消费者：实现MessageListener接口，有onMessage方法
 配置：JmsTemplate
 
-
+----
 2018/10/31 youzan
 印象深刻的项目经验，设计的不错的点
 
 jvm   new对象进入老年代 超大的对象会直接进入老年代
-分为eden survive
+分为eden survivor(From/To) Old
+先进入eden区，经历minor GC后，仍然存活 会被挪到survivor区;
+survivor 区每熬过一次minor GC后，加一岁 达到一定程度会挪到Old区
+年轻代基本都是朝生夕死(80%以上),所以用复制算法，这很快
+gc开始的时候所有对象只会存在eden和survivor的form区，survivor的to是空的; GC后，eden的所有存活对象会复制到survivor的to; from区则根据年龄判断是到Old区还是to区。 然后eden和from就空了；
 
 组合索引
 explain 组合索引是什么样
@@ -137,3 +141,17 @@ hashmap..concunrrentHashmap  hashmap扩容过程
 
 redis 持久化过程
 堆 垃圾回收
+
+----
+蚂蚁面试-11.5
+1.项目经历-合同项目-按位存储、process处理器、乐观锁获取合同编号
+2.事务的隔离性-脏读读未提交-不可重复读反复读不一致，读已提交--幻读--局部和整体--串行
+3.设计模式--模板方法、观察者模式？
+4.HashMap实现、线程安全吗
+5.volatile和synchronized
+6.集群--多实例可以访问一个应用吗
+7.乐观锁、悲观锁
+8.mysql存储引擎myisame和innodb区别，索引的数据结构、为什么用b+树
+9.abstract类和接口的区别
+10.redis支持的数据类型、持久化的方式
+11.谈谈我没问到但是你有的优点

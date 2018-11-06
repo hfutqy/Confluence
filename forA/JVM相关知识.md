@@ -51,3 +51,11 @@ B. 存储已被虚拟机加载的类的信息、常量、静态变量、及时�
 -XX:MaxHeapFreeRatio 最大对内存占比，剩余可用堆内存高于max会自动减少堆内存分配
 -XX:PermSize 非堆初始化内存分配，即permanent size（持久化内存）
 -XX:MaxPermSize 最大非堆内存分配
+
+
+
+
+### JVM学习
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+使用-xms设置最新-xmx设置最大
+使用-XX:+HeapDumpOutOfMemoryError 堆存储快照打印出来
