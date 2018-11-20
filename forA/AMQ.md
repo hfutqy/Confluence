@@ -20,3 +20,7 @@ public boolean isExplicitQosEnabled()
 
 E
 接收等待时间
+
+F 消息消费模式
+点对点：一个生产者一个消费者
+发布订阅：多个生产者多个消费者
