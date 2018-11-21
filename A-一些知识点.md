@@ -94,3 +94,8 @@ AOP即切面方法，@Aspect注解声明的方法，它应该是一个很常用�
 - - - -	|         - - - -|
         |         - - - -|
 ```
+
+运行速度快慢为：StringBuilder > StringBuffer > String
+在线程安全上：StringBuilder是线程不安全的，而StringBuffer是线程安全的
+
+String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。以下面一段代码为例：

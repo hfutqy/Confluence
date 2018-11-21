@@ -76,6 +76,7 @@ Bootstrp loader加载ExtClassLoader,并且将ExtClassLoader的父加载器设置
 3. AppClassLoader
 Bootstrp loader加载完ExtClassLoader后，就会加载AppClassLoader,并且将AppClassLoader的父加载器指定为 ExtClassLoader。
 
+双亲委派模式的工作原理的是;如果一个类加载器收到了类加载请求，它并不会自己先去加载，而是把这个请求委托给父类的加载器去执行，如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器，如果父类加载器可以完成类加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是双亲委派模式，即每个儿子都不愿意干活，每次有活就丢给父亲去干，直到父亲说这件事我也干不了时，儿子自己想办法去完成，这不就是传说中的双亲委派模式.那么这种模式有什么作用呢?
 
 面试经历：
 【线程池】
@@ -96,8 +97,8 @@ Bootstrp loader加载完ExtClassLoader后，就会加载AppClassLoader,并且将
 【多线程】
 1.implements runnable   ---run()
 2.extends Thread --- new Thread(runnable).start;
-3.implements Callable 能拿到结果，返回自己定义的
-4.Feature feature.get(Time)
+3.implements Callable 能拿到结果，返回自己定义的；有Exception
+4.Future future.get(Time)
 【JVm】堆栈
 【数据库】事务ACID 原子性、一致性、隔离性、持久性
 索引：单一索引(唯一索引、主键索引)、组合索引(最左原则，where里面有组合索引从左到右的索引)、
@@ -225,6 +226,18 @@ jvm的线程和栈是什么关系，一个线程能持有多个栈空间吗
 有抗压能力吗？
 为什么离职？
 
+四面：
+TCP/UDP的区别
+https加密协议，怎么握手的呢？
+排查网页慢加载
+线上接口慢如何排查（不重启）
+mysql的读锁
+innodb的间隙锁
+索引，最左原则
+事务隔离
+jvm内存模型
+gc算法
+
 
 抽象类和接口的区别
 抽象类：
@@ -232,7 +245,7 @@ jvm的线程和栈是什么关系，一个线程能持有多个栈空间吗
 包含抽象方法的类，一定是抽象类。
 抽象类只能被继承，一个类只能继承一个抽象类。
 接口：
-全部的方法都是抽象方法，属型都是常量
+全部的方法都是抽象方法，属型都是常量。
 不能实例化，可以定义变量。
 接口变量可以引用具体实现类的实例
 接口只能被实现，一个具体类实现接口，必须实现全部的抽象方法
