@@ -2,6 +2,10 @@
 http://youzhixueyuan.com/jvm-classic-interview-questions-and-answers.html
 jdk小工具：
 https://blog.csdn.net/liuxinghao/article/details/70805900
+jvm调优
+https://blog.csdn.net/sun1021873926/article/details/78002118
+jvm知识点
+http://www.importnew.com/23792.html
 #### 堆
 A. 存放对象实例；基本上对象实例都从这里分配内存。
   - 堆内存大小，最低-Xms(默认内存1/64)，最高-Xmx(默认内存1/4)
