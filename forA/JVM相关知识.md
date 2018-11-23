@@ -60,7 +60,17 @@ full gc清理整个堆内存空间
 -XX:PermSize 非堆初始化内存分配，即permanent size（持久化内存）
 -XX:MaxPermSize 最大非堆内存分配
 
-
+### 垃圾收集器的类型
+1. 串行收集器 -XX:+UseSerialGC
+2. 并行收集器 -XX:+UseParallelGC（默认收集器）
+3. CMS收集器 concurrent-mark-sweep -XX:+UseCMSGC
+并发地扫描标记清除（消耗cpu）
+年轻的和老年代gc时候会出现promotion failure
+就是会有老年代腾出空间的速度赶不上年轻代promotion的速度，需要stw
+还有内存空间碎片化；需要full gc进行整理
+4. G1收集器 garbage first（内存消耗，堆内存>4G）－XX:+UseG1GC
+堆分区1-32MB，多线程扫描这些分区
+它会在扫描处理的时候就整理压缩（CMS只有fullGc的时候才会压缩）
 
 
 ### JVM学习
