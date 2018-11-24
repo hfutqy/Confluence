@@ -61,3 +61,17 @@ full gc清理整个堆内存空间
 Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 使用-xms设置最新-xmx设置最大
 使用-XX:+HeapDumpOutOfMemoryError 堆存储快照打印出来
+
+
+JDK小工具
+工具	用途
+jps	列出已装载的JVM
+jstack	打印线程堆栈信息
+jstat	JVM监控统计信息
+jmap	打印JVM堆内对象情况
+jinfo	输出JVM配置信息
+jconsole	GUI监控工具
+jvisualvm	GUI监控工具
+jhat	堆离线分析工具
+jdb	java进程调试工具
+jstatd	远程JVM监控统计信息
