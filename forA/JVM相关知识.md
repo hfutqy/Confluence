@@ -1,5 +1,13 @@
 ### JVM相关知识
 http://youzhixueyuan.com/jvm-classic-interview-questions-and-answers.html
+jdk小工具：
+https://blog.csdn.net/liuxinghao/article/details/70805900
+jvm调优
+https://blog.csdn.net/sun1021873926/article/details/78002118
+jvm知识点
+http://www.importnew.com/23792.html
+深入理解java虚拟机知识点
+http://www.cnblogs.com/prayers/p/5515245.html
 #### 堆
 A. 存放对象实例；基本上对象实例都从这里分配内存。
   - 堆内存大小，最低-Xms(默认内存1/64)，最高-Xmx(默认内存1/4)
@@ -54,7 +62,17 @@ full gc清理整个堆内存空间
 -XX:PermSize 非堆初始化内存分配，即permanent size（持久化内存）
 -XX:MaxPermSize 最大非堆内存分配
 
-
+### 垃圾收集器的类型
+1. 串行收集器 -XX:+UseSerialGC
+2. 并行收集器 -XX:+UseParallelGC（默认收集器）
+3. CMS收集器 concurrent-mark-sweep -XX:+UseCMSGC
+并发地扫描标记清除（消耗cpu）
+年轻的和老年代gc时候会出现promotion failure
+就是会有老年代腾出空间的速度赶不上年轻代promotion的速度，需要stw
+还有内存空间碎片化；需要full gc进行整理
+4. G1收集器 garbage first（内存消耗，堆内存>4G）－XX:+UseG1GC
+堆分区1-32MB，多线程扫描这些分区
+它会在扫描处理的时候就整理压缩（CMS只有fullGc的时候才会压缩）
 
 
 ### JVM学习
