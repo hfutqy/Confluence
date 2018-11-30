@@ -99,3 +99,8 @@ jvisualvm	GUI监控工具
 jhat	堆离线分析工具
 jdb	java进程调试工具
 jstatd	远程JVM监控统计信息
+
+### 触发fullGC的场景
+1. system.gc()、
+2. 老年代空间不足、
+3. CMS收集垃圾后新对象放不进去】
