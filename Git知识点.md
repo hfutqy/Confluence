@@ -4,4 +4,4 @@
 再用git clone git@XXX:XXX即可
 
 2. revert动作（本质上是重新拉去覆盖当前文件）
-git checkout -- filename
+git checkout -- filename  
