@@ -54,3 +54,21 @@ insert into new_table(filed1,filed2…) select filed1,filed2,… from old_table
 2、**负载均衡**：**主库做增删改，备库做查询**，这样很多查询业务不占用主库资源<br>
 3、**数据集中和分发**：此种模式主要用于数据从分公司集中到总公司，或从总公司分发到分公司，前提是公司需要同步的数据很少，另外各公司间业务系统不是同一家公司开发的<br>
 同步功能主要通过数据库同步软件实现的，象ORACLE的DATAGUARD、QUEST的SHAREPLEX、沃信科技的PAC、ORACLE的GOLDEN GATE、迪思杰的REALSYNC
+
+
+### ON DUPLICATE KEY UPDATE
+mysql骚操作之insert重复主键or唯一索引，走更新而不是update
+比如表：
+id   name
+1    aaa
+2    bbb
+3    ccc
+此时的需求场景是我要insert一堆数据，但是insert的数据中有id字段，且id字段有可能和即存的id重复。
+sql如下
+```sql
+insert into mytb (id, name)
+values (1, 'xxx1'),(2, 'xxx2'),(3, 'xxx3')
+ON DUPLICATE KEY UPDATE name=values(name);
+```
+主要是这个ON DUPLICATE KEY UPDATE
+可以在主键or唯一索引重复的时候走更新动作。
