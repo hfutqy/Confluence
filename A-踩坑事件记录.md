@@ -43,3 +43,14 @@ static PHP_METHOD(swoole_process, __construct)
 ......
 ```
 换新的思路，使用curl_multi 来实现并发的http请求（考虑到时间损耗在于http请求响应上，这样并发使用http请求有效解决耗时）
+
+### 2018/12/27
+#### AOP增强不会重复被拦截
+指定了拦截controller包下面的所有方法，@Before
+除了BaseController这个类
+为BaseController单独指定他的拦截实现@Before
+这样的话，如果Controller类里面调用了BaseController的方法，那么BaseController的方法不会再被拦截走aop。
+需要在BaseController那个被调用的方法里面手动加上增强：
+```java
+((BaseController) AopContext.currentProxy()).function(xxx);
+```
