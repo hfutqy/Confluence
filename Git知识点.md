@@ -5,3 +5,15 @@
 
 2. revert动作（本质上是重新拉去覆盖当前文件）
 git checkout -- filename  
+
+3. git提交：
+a. git add .    // 表示添加所有修改and新增的文本
+b. git commit -m "修改了xxxx"
+c. git push
+
+4. git cherry -pick xxxxxxxxxxx
+这里的xxxxxxxx需要根据git log选择哪一次commit提交
+
+5. git切换分支 git checkout master // 切换到master分支上
+
+6.
