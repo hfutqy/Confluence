@@ -54,3 +54,5 @@ static PHP_METHOD(swoole_process, __construct)
 ```java
 ((BaseController) AopContext.currentProxy()).function(xxx);
 ```
+
+需要注意的是：如果aop拦截实现里面用到了
