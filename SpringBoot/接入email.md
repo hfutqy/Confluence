@@ -14,7 +14,7 @@ SpringBoot对email工具有原生的支持，引入spring-boot-starter-mail即�
 ```
 # email (MailProperties)
 spring.mail.default-encoding=UTF-8
-spring.mail.host=mail.srv
+spring.mail.host=xxxx
 spring.mail.port=25
 spring.mail.username=
 spring.mail.password=
