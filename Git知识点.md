@@ -16,4 +16,10 @@ c. git push
 
 5. git切换分支 git checkout master // 切换到master分支上
 
-6.
+6.git拉所有的分支下来
+git pull --rebase
+在本地搞个自己的分支，这样就是自己本地的分支了，名字就叫qiyu
+git checkout -b qiyu
+
+git commit -m "xxxx"
+git push origin qiyu
