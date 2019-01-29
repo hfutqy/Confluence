@@ -23,3 +23,6 @@ git checkout -b qiyu
 
 git commit -m "xxxx"
 git push origin qiyu
+// 每次更新
+在trunk分支git pull --rebase
+git rebase origin/trunk
