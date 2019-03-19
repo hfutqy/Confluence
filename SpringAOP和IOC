@@ -23,3 +23,6 @@ IOC是容器，注入。按顺序A依赖B，B依赖C；先实例C再B再A；有�
 
 threadlocal
 如果多线程放堆里的实例不安全
+
+
+匿名内部类需要使用OutClass.this.service.function()来使用注入的方法
