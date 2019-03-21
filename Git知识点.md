@@ -26,3 +26,12 @@ git push origin qiyu
 // 每次更新
 在trunk分支git pull --rebase
 然后切到qiyu分支再git rebase origin/trunk
+
+
+7. git 分支重命名
+git branch -m oldName newName
+git push origin newName
+换绑到远程newName上
+git branch --set-upstream-to origin/newName
+删除远程oldName分支
+git push --delete origin oldName
