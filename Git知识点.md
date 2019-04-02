@@ -35,3 +35,10 @@ git push origin newName
 git branch --set-upstream-to origin/newName
 删除远程oldName分支
 git push --delete origin oldName
+
+
+8. 删除某次提交记录
+先把本地的分支放到指定xxxx版本xxx是那次提交version
+git reset --hard xxxxxxx
+再强行push到远程分支
+git push -f
