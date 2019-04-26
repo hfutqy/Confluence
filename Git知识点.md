@@ -42,3 +42,7 @@ git push --delete origin oldName
 git reset --hard xxxxxxx
 再强行push到远程分支
 git push -f
+
+9. git merge x分支（把x分支merge到当前分支）
+然后解决冲突
+然后push
