@@ -2,7 +2,12 @@
 1. HashMap的结构，如何解决Hash冲突，如何扩容
 2. ConcurrentHashMap如何做到并发安全的
 3. HashTable、HashSet、TreeSet
-
+4. 一棵二叉查找树如果满足下面的红黑性质，则为一棵红黑树：
+1) 每个结点是或是红的，或是黑的。
+2) 根结点是黑的。
+3) 每个叶结点（nil[T]）是黑的。
+4) 如果一个结点是红的，那么它的两个儿子是黑的。
+5) 对每个结点，从该结点到其子孙结点的所有路径上包含相同数目的黑结点。
 
 
 二、 多线程
@@ -20,8 +25,9 @@ newFixedThreadPool(),newSingleThreadExecutor(),newCachedThreadPool()等
 
 四、mysql
 1. 索引，B+树，联合索引，索引的设计
-2. 事物隔离级别，Read-uncommitted,Read-committed,repeatable-read,serializable。后三者解决了脏读、不可重复读、幻读的问题。
-
+2. 事物隔离级别，Read-uncommitted,Read-committed,repeatable-read,
+serializable。后三者依次解决了脏读、不可重复读、幻读的问题。
+3. ACID，原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）
 
 五、redis
 
