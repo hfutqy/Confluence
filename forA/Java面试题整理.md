@@ -12,7 +12,7 @@
 
 二、 多线程
 1. 多线程的几种实现方式，Runnable接口，Thread类，Callable接口，Furture
-2. 线程池的实现方式，executor接口，executors实现类
+2. 线程池的实现方式，executor接口，executors实现类  
 newFixedThreadPool(),newSingleThreadExecutor(),newCachedThreadPool()等
 3. ThreadLocal对象，既是全局入库可见，又是线程安全的，对每个线程存储的数据都是各自独立的。可能有内存泄漏，key会消失，value既是处于游离态。
 
@@ -28,6 +28,14 @@ newFixedThreadPool(),newSingleThreadExecutor(),newCachedThreadPool()等
 2. 事物隔离级别，Read-uncommitted,Read-committed,repeatable-read,
 serializable。后三者依次解决了脏读、不可重复读、幻读的问题。如何理解幻读？
 3. ACID，原子性（Atomicity，要么执行要么不执行，原子操作）、一致性（Consistency，写ok后读到写ok的值，保持一致）、隔离性（Isolation,这就是隔离级别了）、持久性（Durability，操作会落地到磁盘，不会丢失）
+4. sql优化+索引
+```
+select * from t where c - 1 = 1000;这个不会用上c的索引。运算。
+select * from t where pow(c,2) = 1000;这个也不会用上索引。函数。
+```
+5. 主键索引和非主键索引是有区别的，主键索引存放的值是整行字段的数据，而非主键索引上存放的值不是整行字段的数据，而且存放主键字段的值。走哪个索引，是会采样的。
+而一个索引的基数越大(区分度)，意味着走索引查询越有优势。  
+由于采样统计的失误，导致系统没有走索引，而是走了全表扫描，而这，也是导致我们 SQL 语句执行的很慢的原因。
 
 五、redis
 
@@ -41,3 +49,7 @@ serializable。后三者依次解决了脏读、不可重复读、幻读的问�
 
 X、拓展
 1. 实现全局流水唯一id（mysql乐观锁，redis队列）
+
+Y、算法题
+1. 查找一个栈里的最小值
+2.
