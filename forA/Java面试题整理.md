@@ -1,3 +1,6 @@
+零、自我介绍
+1. 工作经历，为什么离职，之前的产出，对自己做过的项目的掌握  
+
 一、数据结构相关
 1. HashMap的结构，如何解决Hash冲突，如何扩容
 2. ConcurrentHashMap如何做到并发安全的
@@ -11,10 +14,21 @@
 
 
 二、 多线程
-1. 多线程的几种实现方式，Runnable接口，Thread类，Callable接口，Furture
-2. 线程池的实现方式，executor接口，executors实现类  
+1. 多线程的几种实现方式，Runnable接口，Thread类，Callable接口，Furture  
+2. 线程池的实现方式，executor接口，executors实现类    
 newFixedThreadPool(),newSingleThreadExecutor(),newCachedThreadPool()等
 3. ThreadLocal对象，既是全局入库可见，又是线程安全的，对每个线程存储的数据都是各自独立的。可能有内存泄漏，key会消失，value既是处于游离态。
+4. 锁相关，ReentrantLock,自旋锁，可重入锁等  
+5. java.util.concurrent包里的实现类  
+6. volatile 如何实现对象的可见性（不允许线程内部缓存和指令重排序）  
+但是volatile int a=0; a++这个动作任然有线程安全问题。
+7. 线程间如何通信,进程间如何通信?    
+线程：1). 共享变量; 2),wait, notify; 3)Lock/Condition机制; 4).管道机制  
+进程：管道、命名管道、信号（Signal）、消息（Message）队列、共享内存、内存映射、信号量、套接字  
+8. notify 和 notifyAll有什么区别？  
+均能唤醒正在等待的线程，并且均是最后只有一个线程获取资源对象的锁。  
+notify() 只能唤醒一个线程，而notifyall()能够唤醒所有的线程，当线程被唤醒以后所有被唤醒的线程竞争获取资源对象的锁，其中只有一个能够得到对象锁，执行代码。
+
 
 
 三、设计模式
@@ -48,7 +62,6 @@ select * from t force index(a) where c < 100 and c < 100000;
 (1)、没有用上索引：例如该字段没有索引；由于对字段进行运算、函数操作导致无法用索引。  
 (2)、数据库选错了索引。  
 
-
 五、redis
 
 六、mongo
@@ -64,4 +77,9 @@ X、拓展
 
 Y、算法题
 1. 查找一个栈里的最小值
-2.
+2. 全排列，即查找最长公共子序列
+3. 加和最大的子序列
+4. 数组中找2个数的和为指定数
+5. n个有序数组，求top k
+6. 两个有序数组，求合并后的中位数
+7.
