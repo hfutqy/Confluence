@@ -39,9 +39,7 @@ public class Demo {
         Object lock = new Object();
         ThreadA a = new ThreadA(lock);
         a.start();
-		System.out.println(System.currentTimeMillis());
         Thread.sleep(1000);
-		System.out.println(System.currentTimeMillis());
         a.interrupt();
     }
 }
