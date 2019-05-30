@@ -46,3 +46,11 @@ git push -f
 9. git merge x分支（把x分支merge到当前分支）
 然后解决冲突
 然后push
+
+10. git 合并多次commit为一次  
+git rebase -i [commitId], 这个commitId是你多次改动之前的那个commit，即你是基于这个commit开始改动的  
+然后开始编辑，把从这开始的多次pick，改成s,或者说squash ，当然要保留一个pick，作为merge的commit。  
+然后保存，会跳出commit log，只保留其中一个commit log。  
+然后看看git log,会发现只有一次了  
+git push -f 强推
+中间有问题请用git rebase abort  
