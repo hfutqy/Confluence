@@ -54,3 +54,6 @@ git rebase -i [commitId], 这个commitId是你多次改动之前的那个commit�
 然后看看git log,会发现只有一次了  
 git push -f 强推
 中间有问题请用git rebase abort  
+
+11. 还原到前几个版本  
+git reset [commitID]
