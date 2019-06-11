@@ -26,6 +26,7 @@ git push origin qiyu
 // 每次更新
 在trunk分支git pull --rebase
 然后切到qiyu分支再git rebase origin/trunk
+这个时候就是说明吧trunk的提交move到qiyu分支，再在qiyu分支push，这样qiyu和trunk就一直了。
 
 
 7. git 分支重命名
