@@ -58,3 +58,8 @@ git push -f 强推
 
 11. 还原到前几个版本  
 git reset [commitID]
+
+
+12. 对上一次的提交进行修改
+git commit --amend  
+git  commit --amend 相当于上次提交错误的信息被覆盖了，gitk图形化界面上看不到上次提交的信息，git log上也看不到之前的信息，而add 后再commit 相当于重新加了一个信息。相当于打了个补丁？  
