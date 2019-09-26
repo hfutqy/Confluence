@@ -11,7 +11,7 @@ a. git add .    // 表示添加所有修改and新增的文本
 b. git commit -m "修改了xxxx"
 c. git push
 
-4. git cherry -pick xxxxxxxxxxx
+4. git cherry-pick xxxxxxxxxxx
 这里的xxxxxxxx需要根据git log选择哪一次commit提交
 
 5. git切换分支 git checkout master // 切换到master分支上
@@ -62,4 +62,8 @@ git reset [commitID]
 
 12. 对上一次的提交进行修改
 git commit --amend  
-git  commit --amend 相当于上次提交错误的信息被覆盖了，gitk图形化界面上看不到上次提交的信息，git log上也看不到之前的信息，而add 后再commit 相当于重新加了一个信息。相当于打了个补丁？  
+git  commit --amend 相当于上次提交错误的信息被覆盖了，git图形化界面上看不到上次提交的信息，git log上也看不到之前的信息，而add 后再commit 相当于重新加了一个信息。相当于打了个补丁？  
+
+13. 删除分支
+删除本地分支： git branch -d [branchname]
+删除远程分支: git push origin --delete [branchname]
