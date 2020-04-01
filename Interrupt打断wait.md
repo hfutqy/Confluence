@@ -51,8 +51,8 @@ begin wait()
 java.lang.InterruptedException
 	at java.lang.Object.wait(Native Method)
 	at java.lang.Object.wait(Object.java:502)
-	at com.xiaomi.youpin.hera.controller.Service.testMethod(TestController.java:63)
-	at com.xiaomi.youpin.hera.controller.ThreadA.run(TestController.java:85)
+	at com.xx.xxx.xxxx.controller.Service.testMethod(TestController.java:63)
+	at com.xx.xxx.xxxx.controller.ThreadA.run(TestController.java:85)
 wait状态的线程被interrupt！
 
 ```
